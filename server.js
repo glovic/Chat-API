@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
+const PORT = 3000;
 const bodyParser = require('body-parser'); // Make sure to include body-parser if you use it
 
 app.use(bodyParser.json());
 
+
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
+});
 // Sample user database (replace with your database logic)
 const users = [];
 
