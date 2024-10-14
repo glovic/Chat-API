@@ -99,6 +99,32 @@ app.post('/friends/add', authenticateToken, async (req, res) => {
     }
 });
 
+// Friend Management - Remove Friend
+app.post('/friends/remove', authenticateToken, async (req, res) => {
+    const { friendEmail } = req.body;
+
+    try {
+        // Find the user and the friend
+        const user = await User.findById(req.user.id);
+        const friend = await User.findOne({ email: friendEmail });
+
+        if (!friend) {
+            return res.status(404).json({ message: 'Friend not found' });
+        }
+
+        if (user.friends.includes(friend._id)) {
+            // Remove friend
+            user.friends = user.friends.filter(id => id.toString() !== friend._id.toString());
+            await user.save();
+            res.json({ message: 'Friend removed successfully' });
+        } else {
+            res.status(400).json({ message: 'Friend not in the list' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Error removing friend' });
+    }
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
