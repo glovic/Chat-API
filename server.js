@@ -4,14 +4,21 @@ const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const User = require('./models/User'); // Import the User model
 const authenticate = require('./middleware/authenticate'); // Middleware for JWT authentication
+const http = require('http'); // Required to set up server with socket.io
+const socketIo = require('socket.io'); // Import socket.io
 
 const app = express();
+const server = http.createServer(app); // Create an HTTP server
+const io = socketIo(server); // Initialize Socket.io on the server
 const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Serve the frontend (index.html) from the 'public' directory
+app.use(express.static('public'));
 
 // Connect to your MongoDB database
 mongoose.connect('mongodb+srv://chatapi:admin@cluster0.eb6m9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
@@ -21,6 +28,22 @@ mongoose.connect('mongodb+srv://chatapi:admin@cluster0.eb6m9.mongodb.net/?retryW
     console.log('MongoDB connected successfully');
 }).catch(err => {
     console.error('MongoDB connection error:', err);
+});
+
+// Socket.io real-time communication
+io.on('connection', (socket) => {
+    console.log('A user connected:', socket.id);
+
+    // Handle receiving a message from a client
+    socket.on('sendMessage', (messageData) => {
+        // Broadcast the message to all connected clients
+        io.emit('receiveMessage', messageData);
+    });
+
+    // Handle user disconnection
+    socket.on('disconnect', () => {
+        console.log('User disconnected:', socket.id);
+    });
 });
 
 // Signup route
@@ -126,7 +149,7 @@ app.post('/friends/remove', authenticateToken, async (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
