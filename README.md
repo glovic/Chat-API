@@ -101,3 +101,43 @@ Before you begin, make sure you have:
         "friendId": "userId123"
       }
       ```
+
+### Chat Endpoints
+
+- **Send Message** (Socket.IO event)
+    - Send a message to a friend in real time.
+      ```json
+      {
+        "from": "userId123",
+        "to": "userId456",
+        "message": "Hello!"
+      }
+      ```
+
+- **Receive Message** (Socket.IO event)
+    - Listen for incoming messages in real time.
+
+
+### Group Chat Endpoints
+
+- **Create Group** – `POST /api/groups/create`
+    - Create a new group chat:
+      ```json
+      {
+        "name": "Cool Group",
+        "members": ["userId123", "userId456"]
+      }
+      ```
+
+- **Send Group Message** (Socket.IO event)
+    - Send a message to a group:
+      ```json
+      {
+        "groupId": "groupId123",
+        "message": "Hey team!"
+      }
+      ```
+
+---
+
+
