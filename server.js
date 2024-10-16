@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const messageRoutes = require('./routes/messageRoutes');
 const groupRoutes = require('./routes/groups'); // Import group routes
 const User = require('./models/User'); // Import the User model
 const authenticate = require('./middleware/authenticate'); // Middleware for JWT authentication
@@ -20,7 +21,6 @@ app.use(express.json());
 
 // Serve the frontend (index.html) from the 'public' directory
 app.use(express.static('public'));
-app.use('/api', groupRoutes); 
 
 // Connect to your MongoDB database
 mongoose.connect('mongodb+srv://chatapi:admin@cluster0.eb6m9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
@@ -149,6 +149,10 @@ app.post('/friends/remove', authenticateToken, async (req, res) => {
         res.status(500).json({ message: 'Error removing friend' });
     }
 });
+
+// Register message routes
+app.use('/messages', messageRoutes);
+app.use('/api', groupRoutes);
 
 // Start the server
 server.listen(PORT, () => {
