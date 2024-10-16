@@ -21,3 +21,43 @@ The Chat API is a backend service for a real-time chat application that supports
 - **bcrypt** – Password hashing for security.
 
 ---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, make sure you have:
+
+- **Node.js** (v14+ recommended)
+- **MongoDB** (Local or hosted on MongoDB Atlas)
+
+### Installation Steps
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/glovic/Chat-API.git
+    cd Chat-API
+    ```
+
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3. **Configure your environment:**
+    Create a `.env` file with the following values:
+    ```
+    MONGO_URI=mongodb://localhost:27017/chat-db
+    JWT_SECRET=your_jwt_secret
+    PORT=5000
+    ```
+
+4. **Run the server:**
+    ```bash
+    npm start
+    ```
+
+5. The API will be up and running at `http://localhost:5000`! 🎉
+
+---
+
