@@ -61,3 +61,26 @@ Before you begin, make sure you have:
 
 ---
 
+## 📚 API Documentation
+
+### Authentication Endpoints
+
+- **Signup** – `POST /api/auth/signup`
+    - Create a new user:
+      ```json
+      {
+        "username": "john_doe",
+        "email": "john@example.com",
+        "password": "password123"
+      }
+      ```
+
+- **Login** – `POST /api/auth/login`
+    - Receive a JWT token for further requests:
+      ```json
+      {
+        "email": "john@example.com",
+        "password": "password123"
+      }
+      ```
+
