@@ -155,3 +155,17 @@ This API leverages **Socket.IO** to facilitate instant messaging. Here’s how y
     - Listen for the `receive_message` event to receive real-time messages.
 
 ---
+
+## 🏗️ Project Structure
+
+Here’s an overview of the directory structure:
+
+```bash
+/chat-api
+  ├── config        # Environment and database config
+  ├── controllers   # Business logic (auth, user, chat)
+  ├── models        # MongoDB models (User, Message, Group)
+  ├── routes        # API endpoints (auth, users, messages, groups)
+  ├── websockets    # WebSocket logic for real-time chat
+  ├── middleware    # Authentication middleware (JWT)
+  └── server.js     # Main entry point for the server
