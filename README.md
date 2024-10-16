@@ -49,7 +49,7 @@ Before you begin, make sure you have:
     ```
     MONGO_URI=mongodb://localhost:27017/chat-db
     JWT_SECRET=your_jwt_secret
-    PORT=5000
+    PORT=3000
     ```
 
 4. **Run the server:**
@@ -140,4 +140,18 @@ Before you begin, make sure you have:
 
 ---
 
+## 🔄 Real-Time Communication with Socket.IO
 
+This API leverages **Socket.IO** to facilitate instant messaging. Here’s how you can test the real-time features:
+
+1. **Connect to WebSocket:**
+    - Use a WebSocket client like **Socket.IO Client** or **WebSocket King**.
+    - Connect to `ws://localhost:3000`.
+
+2. **Send Message:**
+    - Use the `send_message` event to send messages between users.
+
+3. **Receive Message:**
+    - Listen for the `receive_message` event to receive real-time messages.
+
+---
