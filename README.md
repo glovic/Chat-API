@@ -84,3 +84,20 @@ Before you begin, make sure you have:
       }
       ```
 
+### Friends Endpoints
+
+- **Add Friend** – `POST /api/friends/add`
+    - Add a friend using their user ID.
+      ```json
+      {
+        "friendId": "userId123"
+      }
+      ```
+
+- **Remove Friend** – `POST /api/friends/remove`
+    - Remove a friend using their user ID.
+      ```json
+      {
+        "friendId": "userId123"
+      }
+      ```
