@@ -169,3 +169,14 @@ Here’s an overview of the directory structure:
   ├── websockets    # WebSocket logic for real-time chat
   ├── middleware    # Authentication middleware (JWT)
   └── server.js     # Main entry point for the server
+ ```
+
+---
+
+## 🚀 Future Improvements
+
+Here are a few enhancements planned for future versions of the Chat API:
+1. Add message history retrieval.
+2. Implement read receipts and typing indicators.
+3. Improve error handling and validation.
+4. Expand testing coverage with unit and integration tests.
