@@ -65,7 +65,7 @@ Before you begin, make sure you have:
 
 ### Authentication Endpoints
 
-- **Signup** – `POST /api/auth/signup`
+- **Signup** – `POST /signup`
     - Create a new user:
       ```json
       {
@@ -75,7 +75,7 @@ Before you begin, make sure you have:
       }
       ```
 
-- **Login** – `POST /api/auth/login`
+- **Login** – `POST /login`
     - Receive a JWT token for further requests:
       ```json
       {
@@ -86,7 +86,7 @@ Before you begin, make sure you have:
 
 ### Friends Endpoints
 
-- **Add Friend** – `POST /api/friends/add`
+- **Add Friend** – `POST /friends/add`
     - Add a friend using their user ID.
       ```json
       {
@@ -94,7 +94,7 @@ Before you begin, make sure you have:
       }
       ```
 
-- **Remove Friend** – `POST /api/friends/remove`
+- **Remove Friend** – `POST /friends/remove`
     - Remove a friend using their user ID.
       ```json
       {
