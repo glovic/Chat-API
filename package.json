@@ -1,37 +1,37 @@
 {
-  "name": "Chat-API", // The name of your project
-  "version": "1.0.0", // The version of your project
-  "description": "A real-time chat API using Node.js, Express, and Socket.io", // A brief description of your project
-  "main": "server.js", // The entry point of your application
+  "name": "Chat-API",
+  "version": "1.0.0",
+  "description": "A real-time chat API using Node.js, Express, and Socket.io",
+  "main": "server.js",
   "scripts": {
-    "test": "jest", // Command to run tests using Jest
-    "start": "node server.js", // Command to start the application
-    "dev": "nodemon server.js" // Command to start the application in development mode (requires nodemon)
+    "test": "jest",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
-    "type": "git", // The type of repository used (git)
-    "url": "git+https://github.com/glovic/Chat-API.git" // URL of the project's repository
+    "type": "git",
+    "url": "git+https://github.com/glovic/Chat-API.git"
   },
-  "keywords": ["chat", "api", "real-time", "nodejs", "express", "socket.io"], // Keywords that describe your project
-  "author": "Victor Nwaogu", // Author of the project
-  "license": "ISC", // License for the project
+  "keywords": ["chat", "api", "real-time", "nodejs", "express", "socket.io"],
+  "author": "Victor Nwaogu",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/glovic/Chat-API/issues" // URL to report bugs or issues
+    "url": "https://github.com/glovic/Chat-API/issues"
   },
-  "homepage": "https://github.com/glovic/Chat-API#readme", // Homepage for the project, usually a README
+  "homepage": "https://github.com/glovic/Chat-API#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3", // Dependency for hashing passwords
-    "dotenv": "^16.4.5", // Dependency for loading environment variables from a .env file
-    "express": "^4.21.1", // Dependency for building web applications and APIs
-    "jsonwebtoken": "^9.0.2", // Dependency for generating and verifying JSON Web Tokens
-    "mongodb": "^3.6.9", // Dependency for MongoDB driver
-    "mongoose": "^5.12.3", // Dependency for MongoDB ODM (Object Data Modeling)
-    "socket.io": "^4.8.0" // Dependency for enabling real-time communication
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.3",
+    "socket.io": "^4.8.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0", // Development dependency for running tests
-    "supertest": "^7.0.0", // Development dependency for testing HTTP servers
-    "nodemon": "^2.0.22" // Development dependency for automatically restarting the server during development
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "nodemon": "^2.0.22"
   }
 }
 
